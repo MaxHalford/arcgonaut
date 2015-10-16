@@ -10,6 +10,8 @@ arcgonaut is written in Go. It uses [Laurent Le Goff](https://github.com/llgcode
 
 ### For users
 
+[Download the binary](http://maxhalford.com/data/arcgonaut)
+
 ### For developpers
 
 ```sh
@@ -17,6 +19,13 @@ go get https://github.com/MaxHalford/arcgonaut
 ```
 
 ## Usage
+
+For the moment the tool is usable in the command-line.
+
+- Naviguate towards the directory where the binary is.
+- ``./arcgonaut -f="example.arcgo"
+
+A PNG will be generated into the same directory. The program takes as input a file that has a [specific format](example.arcgo). The file extension doesn't matter. Tile has to be a list of lines where every line takes the shape "Steve>Alice>10" (Steve sends 10 to Alice).
 
 ## Improvements
 
