@@ -1,6 +1,6 @@
 # arcgonaut
 
-![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+![License](http://img.shields.io/:license-mit-blue.svg)]
 
 Software for creating arc diagrams such as:
 
@@ -28,7 +28,7 @@ For the moment the tool is usable in the command-line.
 - Naviguate towards the directory where the binary is.
 - ``./arcgonaut -f=data/example.arcgo -c1=#ffc3e1``
 
-![Example](example.arcgo)
+![Example](example.png)
 
 A PNG will be generated into the same directory. The program takes as input a file that has a [specific format](example.arcgo). The file extension doesn't matter. Tile has to be a list of lines where every line takes the shape "Steve>Alice>10" (Steve sends 10 to Alice).
 
