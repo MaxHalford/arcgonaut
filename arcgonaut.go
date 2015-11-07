@@ -19,17 +19,25 @@ import (
 
 func main() {
 
-	// Parse the user input
+	// Command-line input
 	var in string
+	var height int
+	var col1 string
+	var col2 string
+
 	flag.StringVar(&in, "f", "", `File to be parsed. The file has to
 		have a certain format. Every line should be "a>b>amount".`)
+	flag.IntVar(&height, "h", 1980, `Height of the output image. The width
+		is deduced from the height.`)
+	flag.StringVar(&col1, "c1", "#eeef61", "Start color of the gradient.")
+	flag.StringVar(&col2, "c2", "#1e3140", "End color of the gradient.")
+
 	flag.Parse()
 
 	// Parse the arcgo file
 	names, counter := OpenArcgoFile(in)
 
-	// Image dimensions
-	height := int(len(names) * 40)
+	// Comoute width
 	width := float64(height) * math.Phi * 1.2
 	// Where the first name is located
 	top := float64(height) / 10
@@ -41,7 +49,7 @@ func main() {
 	// Assign linearly separated coordinates to each name
 	coordinates := AssignCoordinates(names, top, bottom)
 	// Assign "linearly separated" colors to each name
-	colors := AssignColors(names, "#eeef61", "#1e3140")
+	colors := AssignColors(names, col1, col2)
 
 	// Initialize the image
 	img := image.NewRGBA(image.Rect(0, 0, int(width), height))
@@ -61,7 +69,7 @@ func main() {
 			y2 := coordinates[b]
 			// Set the width of the arc
 			z := counter[a][b]
-			gc.SetLineWidth(z)
+			gc.SetLineWidth(2 * z)
 			// Define on what side the arc is
 			if y1 < y2 {
 				// Right side arc
@@ -87,7 +95,8 @@ func main() {
 		gc.FillStringAt(name, x, y)
 	}
 	// Save to file
-	out := strings.Join([]string{strings.Split(in, ".")[0], "png"}, ".")
+	path := strings.Split(in, "/")
+	out := strings.Join([]string{strings.Split(path[len(path)-1], ".")[0], "png"}, ".")
 	draw2dimg.SaveToPngFile(out, img)
 
 }
