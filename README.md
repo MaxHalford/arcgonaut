@@ -1,6 +1,6 @@
 # arcgonaut
 
-![License](http://img.shields.io/:license-mit-blue.svg)]
+![License](http://img.shields.io/:license-mit-blue.svg)
 
 Software for creating arc diagrams such as:
 
