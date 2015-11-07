@@ -16,6 +16,9 @@ You can install Go [here](https://golang.org/doc/install).
 
 ```sh
 go get https://github.com/MaxHalford/arcgonaut
+cd $GOPATH/src/github.com/MaxHalford/arcgonaut
+go get
+go build
 ```
 
 ## Usage
@@ -25,7 +28,7 @@ For the moment the tool is usable in the command-line.
 - Naviguate towards the directory where the binary is.
 - ``./arcgonaut -f=data/example.arcgo -c1=#ffc3e1``
 
-![Airports](example.arcgo)
+![Example](example.arcgo)
 
 A PNG will be generated into the same directory. The program takes as input a file that has a [specific format](example.arcgo). The file extension doesn't matter. Tile has to be a list of lines where every line takes the shape "Steve>Alice>10" (Steve sends 10 to Alice).
 
