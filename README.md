@@ -37,6 +37,6 @@ A PNG will be generated into the same directory. The program takes as input a fi
 - Add different file extensions
 - Find a way to handle enormous data files.
 
-## Contact
+## License
 
-If you have any suggestions please do not hesitate to send me a mail: <maxhalford25@gmail.com> or to open an issue on GitHub.
+The MIT License (MIT). Please see the [license file](LICENSE) for more information.
